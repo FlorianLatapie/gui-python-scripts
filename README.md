@@ -12,7 +12,7 @@ Plusieurs scripts python pour l'analyse de fichiers CSV avec interface graphique
 - Décompressez le dossier `gui-python-scripts-main` dans le dossier de votre choix
 
 ## Comment l'utiliser ?
-Double-cliquez sur le raccourci avec une icône d'étoile jaune
+Double-cliquez sur le raccourci avec une icône d'étoile jaune appelé `Analyser CSV`
 (vous pouvez faire une copie de ce raccourci sur votre bureau)
 
 # English 
@@ -29,7 +29,7 @@ Various python scripts for CSV file analysis with UI in Tkinter
 - Unzip the folder `gui-python-scripts-main` in the folder of your choice
 
 ## How to use ?
-Double-click on the shortcut with a yellow star icon
+Double-click on the shortcut with a yellow star icon called `Analyser CSV`
 (you can copy the shortcut on your desktop)
 
 
