@@ -8,6 +8,7 @@ Plusieurs scripts python pour l'analyse de fichiers CSV avec interface graphique
   - `Python X.XX (64-bit)` devrait être affiché
   - Si ce n'est pas le cas, téléchargez la dernière version de python sur le site : [python.org](https://www.python.org/downloads/)
 - Téléchargez ce depot Git sur votre ordinateur sous forme de dossier ZIP
+![image](https://user-images.githubusercontent.com/70631622/185798444-c03e5a18-d21d-44b5-9f7e-b3b3858ce788.png)
 - Décompressez le dossier `gui-python-scripts-main` dans le dossier de votre choix
 
 ## Comment l'utiliser ?
@@ -24,6 +25,7 @@ Various python scripts for CSV file analysis with UI in Tkinter
   - `Python X.XX (64-bit)` should be displayed
   - If it is not the case, download the last version of python on the site : [python.org](https://www.python.org/downloads/)
 - Download this Git repository on your computer as a ZIP file
+![image](https://user-images.githubusercontent.com/70631622/185798444-c03e5a18-d21d-44b5-9f7e-b3b3858ce788.png)
 - Unzip the folder `gui-python-scripts-main` in the folder of your choice
 
 ## How to use ?
