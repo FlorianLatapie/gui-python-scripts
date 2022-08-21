@@ -12,6 +12,7 @@ list_directory = [i for i in list_directory if regex.match(i)]
 
 # Methods
 def launch_window(script_name):
+    root.destroy()
     python_script = importlib.reload(importlib.import_module(script_name[:-3]))  # remove ".py" extension
     python_script.run()
 
@@ -32,10 +33,14 @@ root.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 
 label = Label(root, text="Choisissez le script que vous voulez exécuter")
 label.pack()
+spacer = Label(root, text="")
+spacer.pack()
 
 # Generating the list of scripts (buttons)
 for filename in list_directory:
     Button(root, text=filename.capitalize()[:-7], command=lambda arg1=filename: launch_window(arg1)).pack()
+    spacer = Label(root, text="")
+    spacer.pack()
 
 button = Button(root, text="Quitter", command=root.destroy)
 button.pack()
