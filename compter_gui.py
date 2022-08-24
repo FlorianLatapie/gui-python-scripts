@@ -94,6 +94,7 @@ def launch_and_save():
 
 def run():
     root = Tk()
+    root.resizable(False, False)
     root.title('Compter')
 
     window_width = 500

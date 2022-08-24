@@ -19,6 +19,7 @@ def launch_window(script_name):
 
 # Creating the window
 root = Tk()
+root.resizable(False, False)
 root.title('Lanceurs de scripts python')
 
 window_width = 500
