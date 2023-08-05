@@ -43,8 +43,15 @@ def open_file_chooser_export():
 
 def check_col_number():
     val = col_num.get()
-    if not val.isnumeric():
-        return False
+    # if is not numeric and only contains letters
+    if not val.isnumeric() and val.isalpha():
+        # convert excel columns name to number
+        val = val.upper()
+        col = 0
+        for c in val:
+            col = col * 26 + (ord(c) - 64)
+        val = col
+
 
     global row_to_search
     row_to_search = int(val) - 1
