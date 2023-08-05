@@ -24,7 +24,7 @@ def error_text():
 
 def run(file_name, row_to_search, has_header=False):
     global line  # very ugly but it works
-    line = 0
+    line = 1
 
     global errors  # don't mind this either
     errors = []

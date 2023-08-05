@@ -84,8 +84,11 @@ def launch_and_save():
         return
     with open(export_file_name, 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile, delimiter=';')
-        res = compter.get_errors()
-        for row in res:
+        errors = compter.get_errors()
+
+        csv_writer.writerow(["Numéro de ligne", "Ligne entière"])
+        for row in errors:
+            print(row)
             csv_writer.writerow(row)
         tkinter.messagebox.showinfo('Résultat', "Sauvegardé !")
 
