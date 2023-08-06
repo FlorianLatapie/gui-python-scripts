@@ -1,55 +1,37 @@
 import csv
 
-last_number = -1
-line = 0
-errors = []
 
-
-def get_errors():  # I'm not sure that it is correct or if there is a better way to do it
-    return errors
-
-
-def save_error(line_number, line_content):
-    errors.append([line_number, line_content])
-
-
-def error_text():
+def format_error_messages(errors):
     if not errors:
         return "aucune erreur"
-    text = ""
-    for error in errors:
-        text += f"Ligne {error[0] + 1} : {error[1]}\n"
-    return text
+    return '\n'.join(f"Ligne {error[0]} : {error[1]}" for error in errors)
 
 
 def run(file_name, row_to_search, has_header=False):
-    global line  # very ugly but it works
-    line = 1
-
-    global errors  # don't mind this either
     errors = []
+
+    def add_error(line_number, content):
+        errors.append([line_number, content])
 
     with open(file_name, newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=';')
 
         if has_header:
             next(reader)
-            line += 1
 
-        last_num = reader.__next__()[row_to_search]
+        last_num = next(reader)[row_to_search]
 
-        for row in reader:
-            line += 1
+        for (i, row) in enumerate(reader):
+            current_line_number = i + 2
 
-            try:
-                if int(row[row_to_search]) != int(last_num) + 1:
-                    save_error(line, row)
-            except:
-                save_error(line, row)
+            if not isinstance(int(row[row_to_search]), int):
+                add_error(current_line_number, row)
+            if int(row[row_to_search]) != int(last_num) + 1:
+                add_error(current_line_number, row)
 
             last_num = row[row_to_search]
+    return errors
 
 
 if __name__ == "__main__":
-    run("Sample files/count - with error.csv", 1)
-    print(error_text())
+    print(format_error_messages(run("Sample files/count - with error.csv", 1)))
