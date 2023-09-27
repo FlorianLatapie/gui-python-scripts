@@ -130,3 +130,5 @@ dmypy.json
 
 # JetBrains Pycharm 
 .idea/*
+Scripts/*
+pyvenv.cfg
